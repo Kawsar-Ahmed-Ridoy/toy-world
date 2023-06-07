@@ -3,6 +3,7 @@ import {
     RouterProvider,
   } from "react-router-dom";
 import Main from "../../Layout/Main";
+import Blog from "../../Pages/Blog/Blog";
 
   const router = createBrowserRouter([
     {
@@ -10,7 +11,10 @@ import Main from "../../Layout/Main";
       element: <Main></Main>,
       errorElement: '',
       children: [
- 
+        {
+          path: 'blog',
+          element: <Blog></Blog>
+        }
       ]
     },
   ]);
