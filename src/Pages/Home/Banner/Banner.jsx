@@ -15,7 +15,7 @@ const Banner = () => {
         font-serif text-white "
             >
               <div className='my-auto container p-4'>
-              <h2 className="text-5xl uppercase leading-tight">
+              <h2 className="text-5xl uppercase leading-tight font-mono font-extrabold">
               Welcome to Toy World <br /> Where Imagination <br /> Comes to Life!
               </h2>
               <p>Explore a world of endless fun and imagination at Toy World! We offer a wide range of captivating toys and games that inspire creativity, curiosity, and joy in children of all ages. Discover the perfect playtime companions, from classic favorites to the latest trends, designed to engage, educate, and entertain. With our commitment to quality and safety, you can trust that every toy in our collection is carefully selected to bring smiles to little faces and create unforgettable memories. Step into Toy World and unlock a world of boundless possibilities for playtime adventures. Start exploring today!</p>
@@ -41,7 +41,7 @@ const Banner = () => {
         font-serif text-white "
             >
               <div className='my-auto container p-4'>
-              <h2 className="text-5xl uppercase leading-tight">
+              <h2 className="text-5xl uppercase leading-tight font-mono font-extrabold">
               Welcome to Toy World <br /> Where Imagination <br /> Comes to Life!
               </h2>
               <p>Explore a world of endless fun and imagination at Toy World! We offer a wide range of captivating toys and games that inspire creativity, curiosity, and joy in children of all ages. Discover the perfect playtime companions, from classic favorites to the latest trends, designed to engage, educate, and entertain. With our commitment to quality and safety, you can trust that every toy in our collection is carefully selected to bring smiles to little faces and create unforgettable memories. Step into Toy World and unlock a world of boundless possibilities for playtime adventures. Start exploring today!</p>
@@ -66,7 +66,7 @@ const Banner = () => {
         font-serif text-white "
             >
               <div className='my-auto container p-4'>
-              <h2 className="text-5xl uppercase leading-tight">
+              <h2 className="text-5xl uppercase leading-tight font-mono font-extrabold">
               Welcome to Toy World <br /> Where Imagination <br /> Comes to Life!
               </h2>
               <p>Explore a world of endless fun and imagination at Toy World! We offer a wide range of captivating toys and games that inspire creativity, curiosity, and joy in children of all ages. Discover the perfect playtime companions, from classic favorites to the latest trends, designed to engage, educate, and entertain. With our commitment to quality and safety, you can trust that every toy in our collection is carefully selected to bring smiles to little faces and create unforgettable memories. Step into Toy World and unlock a world of boundless possibilities for playtime adventures. Start exploring today!</p>

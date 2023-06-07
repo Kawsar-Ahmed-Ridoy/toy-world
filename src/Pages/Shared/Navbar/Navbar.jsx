@@ -38,7 +38,7 @@ const Navbar = () => {
 
         <Link
           to="/"
-          className="text-primary font-bold text-3xl font-serif "
+          className="text-primary font-extrabold text-3xl font-mono  "
         >
           Toy World
         </Link>
