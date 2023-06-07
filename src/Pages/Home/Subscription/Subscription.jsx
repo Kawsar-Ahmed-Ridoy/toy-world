@@ -8,7 +8,7 @@ const Subscription = () => {
                 <div className="flex justify-center gap-4 px-4 flex-wrap">
                     <input type="email" placeholder='email'
                     className='rounded-3xl bg-primary border-2 w-full ps-4 py-2 text-white outline-none ' />
-                    <button className='btn px-8 rounded-3xl  btn-warning mt-4'>Subscribe</button>
+                    <button className='btn px-8 rounded-3xl  btn-warning mt-4 hover:px-12'>Subscribe</button>
                 </div>
             </div>
         </div>
