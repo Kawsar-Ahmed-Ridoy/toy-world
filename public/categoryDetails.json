@@ -1,0 +1,56 @@
+[
+  {
+    "id": "1",
+    "name": "Speedster GT",
+    "price": 45000,
+    "rating": 4.5,
+    "img": "https://hips.hearstapps.com/hmg-prod/images/mexican-beef-n-rice-skillet1-1665593962.jpg?crop=0.840xw:0.630xh;0.115xw,0.173xh&resize=1200:*",
+    "description": "The Speedster GT is a sleek and fast sports car. It features a powerful engine and aerodynamic design, making it perfect for racing enthusiasts.",
+    "quantity": 10
+  },
+  {
+    "id": "2",
+    "name": "TurboX Racer",
+    "price": 52000,
+    "rating": 4.2,
+    "img": "https://hips.hearstapps.com/hmg-prod/images/mexican-beef-n-rice-skillet1-1665593962.jpg?crop=0.840xw:0.630xh;0.115xw,0.173xh&resize=1200:*",
+    "description": "The TurboX Racer is a high-performance racing car built for speed. With its turbocharged engine and advanced handling, it delivers an exhilarating driving experience.",
+    "quantity": 5
+  },
+  {
+    "id": "3",
+    "name": "Blaze Buster",
+    "price": 25000,
+    "rating": 4.3,
+    "img": "https://hips.hearstapps.com/hmg-prod/images/mexican-beef-n-rice-skillet1-1665593962.jpg?crop=0.840xw:0.630xh;0.115xw,0.173xh&resize=1200:*",
+    "description": "The Blaze Buster is a robust fire truck designed to tackle emergencies. It is equipped with firefighting equipment and advanced safety features.",
+    "quantity": 8
+  },
+  {
+    "id": "4",
+    "name": "Fire Rescue Express",
+    "price": 32000,
+    "rating": 4.6,
+    "img": "https://hips.hearstapps.com/hmg-prod/images/mexican-beef-n-rice-skillet1-1665593962.jpg?crop=0.840xw:0.630xh;0.115xw,0.173xh&resize=1200:*",
+    "description": "The Fire Rescue Express is a versatile fire truck built to handle various rescue operations. It combines speed, agility, and firefighting capabilities.",
+    "quantity": 3
+  },
+  {
+    "id": "5",
+    "name": "Patrol Pursuit",
+    "price": 28000,
+    "rating": 4.4,
+    "img": "https://hips.hearstapps.com/hmg-prod/images/mexican-beef-n-rice-skillet1-1665593962.jpg?crop=0.840xw:0.630xh;0.115xw,0.173xh&resize=1200:*",
+    "description": "The Patrol Pursuit is a reliable police car that ensures law enforcement officers can respond quickly and effectively. It is equipped with the latest technology and safety features.",
+    "quantity": 12
+  },
+  {
+    "id": "6",
+    "name": "Law Enforcer LX",
+    "price": 36000,
+    "rating": 4.8,
+    "img": "https://hips.hearstapps.com/hmg-prod/images/mexican-beef-n-rice-skillet1-1665593962.jpg?crop=0.840xw:0.630xh;0.115xw,0.173xh&resize=1200:*",
+    "description": "The Law Enforcer LX is a top-of-the-line police car known for its superior performance and advanced crime-fighting capabilities. It sets the standard for law enforcement vehicles.",
+    "quantity": 6
+  }
+]

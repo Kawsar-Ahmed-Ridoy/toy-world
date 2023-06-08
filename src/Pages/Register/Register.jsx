@@ -42,7 +42,7 @@ const Register = () => {
         <div className="hero py-14">
         <div className="hero-content flex-col">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold text-warning">Register</h1>
+            <h1 className="text-5xl font-bold text-warning font-mono">Register</h1>
           </div>
           <div className="card w-full max-w-md shadow-2xl bg-base-100 ">
             <form onSubmit={handleRegister} className="card-body">
@@ -108,6 +108,7 @@ const Register = () => {
                   type="submit"
                   value="Register"
                 />
+                <div className="divider mb-2">OR</div>
               </div>
               <GoogleLogin></GoogleLogin>
             </form>
