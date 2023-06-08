@@ -5,6 +5,7 @@ import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import { toast } from "react-hot-toast";
 
 const ShopByCategory = () => {
   const [shopCategory, setShopCategory] = useState([]);
@@ -15,6 +16,10 @@ const ShopByCategory = () => {
       .then((data) => setShopCategory(data));
   }, []);
 
+  const handleClick = () =>{
+    toast.success('Success')
+  }
+
   return (
     <div className="container mx-auto">
       <div className="my-8">
@@ -24,17 +29,17 @@ const ShopByCategory = () => {
         <p className="text-center  text-gray-500">__________________</p>
       </div>
       <Tabs>
-        <TabList className="font-bold font-mono text-primary">
-          {shopCategory?.map((category) => (
-            <Tab>{category.category}</Tab>
+        <TabList className="font-bold font-mono text-primary text-center 2xl:text-start">
+          {shopCategory?.map((category, i) => (
+            <Tab key={i}>{category.category}</Tab>
           ))}
         </TabList>
 
-        {shopCategory?.map((category) => (
-          <TabPanel>
-            <div className="flex lg:justify-between flex-wrap justify-center gap-6">
-              {category?.items?.map((cat) => (
-                <div className="">
+        {shopCategory?.map((category, i) => (
+          <TabPanel className='rounded' key={i}>
+            <div className="flex flex-wrap justify-center gap-6">
+              {category?.items?.map((cat, i) => (
+                <div className=" shadow-2xl rounded-2xl" key={i}>
                   <div className="hero-content flex-col items-start lg:flex-row lg:items-center">
                     <img
                       src="https://hips.hearstapps.com/hmg-prod/images/mexican-beef-n-rice-skillet1-1665593962.jpg?crop=0.840xw:0.630xh;0.115xw,0.173xh&resize=1200:*"
@@ -56,7 +61,7 @@ const ShopByCategory = () => {
                         />
                       </div>
                       <Link to="/">
-                        <button className="btn btn-primary">
+                        <button onClick={handleClick} className="btn btn-primary">
                           View Details
                         </button>
                       </Link>
