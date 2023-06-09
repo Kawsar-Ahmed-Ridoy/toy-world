@@ -7,7 +7,7 @@ const Banner = () => {
         <div style={{ height: "93vh" }} className="carousel w-full ">
           <div id="slide1" className="carousel-item relative w-full">
             <div className="bg-secondary opacity-30 absolute h-full w-full"></div>
-            <img src='https://www.maggi.co.uk/sites/default/files/styles/maggi_desktop_image_style/public/NUK1265%20maggi%20Recipes%20banner%201500x700px%20opt2A.jpg?h=4f5b30f1&itok=DcsF1RwA' alt="" className="w-full" />
+            <img src='https://i.ibb.co/9YVQpLF/maxresdefault.jpg' alt="" className="w-full" />
 
             <div
               style={{ height: "90vh" }}
@@ -34,7 +34,7 @@ const Banner = () => {
 
           <div id="slide2" className="carousel-item relative w-full">
             <div className="bg-secondary opacity-30 absolute h-full w-full"></div>
-            <img src='https://hips.hearstapps.com/hmg-prod/images/mexican-beef-n-rice-skillet1-1665593962.jpg?crop=0.840xw:0.630xh;0.115xw,0.173xh&resize=1200:*' alt="" className="w-full" />
+            <img src='https://i.ibb.co/SRMJk3R/best-car-toys-kids.jpg' alt="" className="w-full" />
             <div
               style={{ height: "90vh" }}
               className="absolute flex justify-center align-middle w-full text-center 
@@ -59,7 +59,7 @@ const Banner = () => {
           </div>
           <div id="slide3" className="carousel-item relative w-full">
             <div className="bg-secondary opacity-30 absolute h-full w-full"></div>
-            <img src='https://img.taste.com.au/CTuSv-Lx/w1200-h630-cfill/taste/2016/11/beef-shepherds-pie-106408-1.jpeg' alt="" className="w-full" />
+            <img src='https://i.ibb.co/X5rrxCP/maxresdefault-1.jpg' alt="" className="w-full" />
             <div
               style={{ height: "90vh"}}
               className="absolute flex justify-center align-middle w-full text-center 

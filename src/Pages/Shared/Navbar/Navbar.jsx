@@ -9,6 +9,7 @@ const Navbar = () => {
       .then(() => {})
       .catch((err) => console.log(err));
   };
+  
   return (
     <div className="navbar  px-8 sticky top-0 z-50 bg-gray-100">
       <div className="navbar-start ">
@@ -39,12 +40,14 @@ const Navbar = () => {
             <Link to="/allToys">
               <li className="font-bold ">All Toys</li>
             </Link>
-            <Link to="/addAToy">
+            {
+              user?.uid? <><Link to="/addAToy">
               <li className="font-bold ">Add A Toy</li>
             </Link>
             <Link to="/myToys">
               <li className="font-bold ">My Toys</li>
-            </Link>
+            </Link></> : <></>
+            }
             <Link to="/blog">
               <li className="font-bold">Blog</li>
             </Link>
@@ -53,8 +56,9 @@ const Navbar = () => {
 
         <Link
           to="/"
-          className="text-primary font-extrabold text-3xl font-mono  "
+          className="text-primary font-extrabold text-3xl font-mono flex justify-center items-center gap-2 flex-wrap"
         >
+          <img src='https://i.ibb.co/VQzYXCz/Toy-World-Logo-01-scaled.jpg' className="h-8" alt="" />
           Toy World
         </Link>
       </div>
@@ -66,12 +70,14 @@ const Navbar = () => {
           <Link to="/allToys">
             <li className="font-bold ">All Toys</li>
           </Link>
-          <Link to="/addAToy">
-            <li className="font-bold ">Add A Toy</li>
-          </Link>
-          <Link to="/myToys">
-            <li className="font-bold ">My Toys</li>
-          </Link>
+            {
+              user?.uid? <>          <Link to="/addAToy">
+              <li className="font-bold ">Add A Toy</li>
+            </Link>
+            <Link to="/myToys">
+              <li className="font-bold ">My Toys</li>
+            </Link></> : <></>
+            }
           <Link to="/blog">
             <li className="font-bold">Blog</li>
           </Link>

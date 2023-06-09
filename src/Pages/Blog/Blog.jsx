@@ -3,7 +3,7 @@ const Blog = () => {
   return (
     <div className="mb-16 mt-12  max-w-screen-xl mx-auto">
       <div className="my-8 text-center">
-        <h2 className="text-4xl font-bold text-warning font-serif">BLOG</h2>
+        <h2 className="text-4xl font-bold text-primary font-mono">BLOG</h2>
         <p className=" text-gray-500 mb-6">__________________</p>
       </div>
       <div className="flex justify-around text-center align-middle flex-wrap actual-receipt">

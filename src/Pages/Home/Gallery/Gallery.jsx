@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Aos from "aos";
+import 'aos/dist/aos.css'
 
 const Gallery = () => {
     const [gallery, setGallery] = useState([])
@@ -9,8 +11,12 @@ const Gallery = () => {
         .then(data => setGallery(data))
     },[])
 
+    useEffect(()=>{
+      Aos.init({duration: 500})
+    },[])
+
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto mb-16">
       <div className="my-8">
         <h2 className="text-center text-4xl font-bold text-primary font-mono ">
           Gallery
@@ -19,7 +25,7 @@ const Gallery = () => {
       </div>
       <div className="flex justify-around align-middle flex-wrap gap-10">
         {
-            gallery?.map(gal => <div className="card w-72 bg-base-100 shadow-xl" key={gal.id}>
+            gallery?.map(gal => <div className="card w-72 bg-base-100 shadow-xl" key={gal.id} data-aos = 'fade-left'>
             <figure >
               <img
                 className="rounded-2xl h-60 w-full"

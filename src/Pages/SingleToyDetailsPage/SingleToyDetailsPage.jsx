@@ -19,7 +19,7 @@ const SingleToyDetailsPage = () => {
         <div>
           <div className="my-8">
             <h2 className="text-center text-4xl font-bold text-primary font-mono ">
-              Single Toy Details Page
+              Single Toy Details
             </h2>
             <p className="text-center  text-gray-500">__________________</p>
           </div>

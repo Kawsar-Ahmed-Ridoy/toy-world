@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Aos from "aos";
+import 'aos/dist/aos.css'
 
 const About = () => {
+  useEffect(()=>{
+    Aos.init()
+  },[])
   return (
-    <div className="mb-16 ">
+    <div className="mb-16">
       <div className="my-8">
         <h2 className="text-center text-4xl font-bold text-primary font-mono ">
           About
         </h2>
         <p className="text-center  text-gray-500">__________________</p>
       </div>
-      <div className="py-12 shadow-md  bg-warning ">
+      <div className="py-12 shadow-md  bg-warning " data-aos = 'fade-left'>
         <h2 className="text-center text-5xl font-mono font-extrabold mb-4 leading-tight">
           Welcome to Toy <br /> World!
         </h2>

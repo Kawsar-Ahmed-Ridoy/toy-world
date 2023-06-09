@@ -7,6 +7,8 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { toast } from "react-hot-toast";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import Aos from "aos";
+import 'aos/dist/aos.css'
 
 const ShopByCategory = () => {
   const { user } = useContext(AuthContext);
@@ -18,21 +20,27 @@ const ShopByCategory = () => {
       .then((data) => setShopCategory(data));
   }, []);
 
+  useEffect(()=>{
+    Aos.init()
+  },[])
+
   const handleClick = () => {
     if (!user) {
       toast.success("You have to log in first to view details");
     }
   };
 
+  
+
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto mb-16">
       <div className="my-8">
         <h2 className="text-center text-4xl font-bold text-primary font-mono ">
           Shop By Category
         </h2>
         <p className="text-center  text-gray-500">__________________</p>
       </div>
-      <Tabs>
+      <Tabs  data-aos = 'fade-right'>
         <TabList className="font-bold font-mono text-primary text-center 2xl:text-start">
           {shopCategory?.map((category, i) => (
             <Tab key={i}>{category.category}</Tab>
@@ -46,8 +54,8 @@ const ShopByCategory = () => {
                 <div className=" shadow-2xl rounded-2xl" key={cat.id}>
                   <div className="hero-content flex-col items-start lg:flex-row lg:items-center">
                     <img
-                      src="https://hips.hearstapps.com/hmg-prod/images/mexican-beef-n-rice-skillet1-1665593962.jpg?crop=0.840xw:0.630xh;0.115xw,0.173xh&resize=1200:*"
-                      className="max-w-sm h-56 rounded-lg shadow-2xl"
+                      src={cat.img}
+                      className="w-80 h-56 rounded-lg shadow-2xl"
                     />
                     <div>
                       <div className="text-gray-600">

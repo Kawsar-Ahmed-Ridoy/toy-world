@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
+import { toast } from "react-hot-toast";
 
 const AllToys = () => {
+    const {user} = useContext(AuthContext)
   const loadeData = useLoaderData();
+
+  const handleClick = () => {
+    if (!user) {
+      toast.success("You have to log in first to view details");
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const search = e.target.search.value;
     console.log(search);
   };
-  console.log(loadeData);
   return (
     <div className="container mx-auto">
       <div className="my-8">
@@ -81,7 +89,7 @@ const AllToys = () => {
               </td>
               <th>
                 <Link to={`/toy/${data._id}`}>
-                  <button className="btn btn-primary">View Details</button>
+                  <button onClick={handleClick} className="btn btn-primary">View Details</button>
                 </Link>
               </th>
             </tr>
