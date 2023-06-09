@@ -1,27 +1,26 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const AddAToy = () => {
-
+const [toys, setToys] = useState([])
 const {user} = useContext(AuthContext)
-const {displayName, email} = user;
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
     const productName = form.productName.value;
-    const sellerName = form.sellerName.value;
-    const sellerEmail = form.sellerEmail.value;
+    const displayName = form.sellerName.value;
+    const email = form.sellerEmail.value;
     const photo = form.photo.value;
     const price = form.price.value;
     const rating = form.rating.value;
     const gander = form.gander.value;
     const quantity = form.quantity.value;
     const description = form.description.value;
-    const productDetails = {
+    const addAToy = {
       productName,
-      displayName: sellerName,
-      email: sellerEmail,
+      displayName,
+      email,
       photo,
       price,
       rating,
@@ -29,7 +28,22 @@ const {displayName, email} = user;
       quantity,
       description
     };
-    console.log(productDetails);
+    console.log(addAToy);
+
+        fetch('http://localhost:5000/addAToy', {
+            method: 'POST',
+            headers: {
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(addAToy)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.insertedId){
+                alert('Toy Add Successfully')
+            }
+        })
   };
   return (
     <div className="mb-16 max-w-screen-xl mx-auto">
@@ -51,7 +65,7 @@ const {displayName, email} = user;
             name="sellerName"
             placeholder="Seller Name"
             className="input input-bordered w-full"
-            defaultValue={displayName}
+            defaultValue={user?.displayName}
             required
           />
           <input
@@ -59,7 +73,7 @@ const {displayName, email} = user;
             type="text"
             placeholder="Seller Email"
             className="input input-bordered w-full"
-            defaultValue={email}
+            defaultValue={user?.email}
             required
           />
           <input
