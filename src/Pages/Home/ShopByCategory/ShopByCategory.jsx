@@ -9,20 +9,20 @@ import { toast } from "react-hot-toast";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
 const ShopByCategory = () => {
-  const {user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
   const [shopCategory, setShopCategory] = useState([]);
 
   useEffect(() => {
-    fetch("category.json")
+    fetch("http://localhost:5000/category")
       .then((res) => res.json())
       .then((data) => setShopCategory(data));
   }, []);
 
-  const handleClick = () =>{
-    if(!user){
-      toast.success('You have to log in first to view details')
+  const handleClick = () => {
+    if (!user) {
+      toast.success("You have to log in first to view details");
     }
-  }
+  };
 
   return (
     <div className="container mx-auto">
@@ -40,7 +40,7 @@ const ShopByCategory = () => {
         </TabList>
 
         {shopCategory?.map((category, i) => (
-          <TabPanel className='rounded' key={i}>
+          <TabPanel className="rounded" key={i}>
             <div className="flex flex-wrap justify-center gap-6">
               {category?.items?.map((cat) => (
                 <div className=" shadow-2xl rounded-2xl" key={cat.id}>
@@ -65,7 +65,10 @@ const ShopByCategory = () => {
                         />
                       </div>
                       <Link to={`/singleToyPageDetails/${cat?.id}`}>
-                        <button onClick={handleClick} className="btn btn-primary">
+                        <button
+                          onClick={handleClick}
+                          className="btn btn-primary"
+                        >
                           View Details
                         </button>
                       </Link>

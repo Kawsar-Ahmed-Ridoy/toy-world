@@ -6,7 +6,7 @@ const SingleToyDetailsPage = () => {
     const [singleToy, setSingleToy] = useState([])
 
     useEffect(() => {
-        fetch('/categoryDetails.json')
+        fetch('http://localhost:5000/categoryDetails')
           .then((res) => res.json())
           .then((data) => {
             console.log(data)
