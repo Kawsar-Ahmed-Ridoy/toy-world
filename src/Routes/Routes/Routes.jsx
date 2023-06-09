@@ -32,11 +32,12 @@ const router = createBrowserRouter([
       },
       {
         path: 'addAToy',
-        element: <AddAToy></AddAToy>
+        element: <PrivateRoute><AddAToy></AddAToy></PrivateRoute>
       },
       {
         path: 'myToys',
-        element: <MyToys></MyToys>
+        element: <PrivateRoute><MyToys></MyToys></PrivateRoute>,
+        loader: ()=> fetch('http://localhost:5000/addAToy')
       },
       {
         path:'allToys',

@@ -2,8 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const AddAToy = () => {
-const [toys, setToys] = useState([])
-const {user} = useContext(AuthContext)
+  const [toys, setToys] = useState([]);
+  const { user } = useContext(AuthContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -30,26 +30,28 @@ const {user} = useContext(AuthContext)
     };
     console.log(addAToy);
 
-        fetch('http://localhost:5000/addAToy', {
-            method: 'POST',
-            headers: {
-                'content-type':'application/json'
-            },
-            body: JSON.stringify(addAToy)
-        })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if(data.insertedId){
-                alert('Toy Add Successfully')
-            }
-        })
+    fetch("http://localhost:5000/addAToy", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(addAToy)
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          alert("Toy Add Successfully");
+        }
+      });
   };
   return (
     <div className="mb-16 max-w-screen-xl mx-auto">
-      <div className="mb-8 text-center">
-        <h1 className=" text-4xl font-bold mt-8">Add A Toy</h1>
-        <span>______________</span>
+      <div className="my-8">
+        <h2 className="text-center text-4xl font-bold text-primary font-mono ">
+         Add A Toy
+        </h2>
+        <p className="text-center  text-gray-500">__________________</p>
       </div>
       <div className="flex justify-around  align-middle flex-wrap ">
         <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5 mt-5">
