@@ -1,12 +1,20 @@
-import React from "react";
-import { useLoaderData } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const MyToys = () => {
-  const loadeData = useLoaderData();
-  console.log(loadeData);
+    const {user} = useContext(AuthContext)
+const [loadeData, setLoadeData] = useState([])
+
+  const url = `http://localhost:5000/myToys?email=${user.email}`
+
+  useEffect(()=>{
+    fetch(url)
+    .then(res => res.json())
+    .then(data => setLoadeData(data))
+  },[url])
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto mb-4">
       <div className="my-8">
         <h2 className="text-center text-4xl font-bold text-primary font-mono ">
           My Toys

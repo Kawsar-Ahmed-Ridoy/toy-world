@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { toast } from "react-hot-toast";
 
 const AddAToy = () => {
-  const [toys, setToys] = useState([]);
   const { user } = useContext(AuthContext);
 
   const handleSubmit = (event) => {
@@ -28,7 +28,6 @@ const AddAToy = () => {
       quantity,
       description
     };
-    console.log(addAToy);
 
     fetch("http://localhost:5000/addAToy", {
       method: "POST",
@@ -41,7 +40,8 @@ const AddAToy = () => {
       .then((data) => {
         console.log(data);
         if (data.insertedId) {
-          alert("Toy Add Successfully");
+         toast.success("Toy Add Successfully");
+         form.reset()
         }
       });
   };
