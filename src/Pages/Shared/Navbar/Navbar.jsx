@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { AuthContext } from '../../../Provider/AuthProvider';
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -9,8 +9,8 @@ const Navbar = () => {
       .then(() => {})
       .catch((err) => console.log(err));
   };
-    return (
-        <div className="navbar  px-8 sticky top-0 z-50 bg-gray-100">
+  return (
+    <div className="navbar  px-8 sticky top-0 z-50 bg-gray-100">
       <div className="navbar-start ">
         <div className="dropdown text-primary">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -36,6 +36,15 @@ const Navbar = () => {
             <Link to="/">
               <li className="font-bold ">Home</li>
             </Link>
+            <Link to="/allToys">
+              <li className="font-bold ">All Toys</li>
+            </Link>
+            <Link to="/addAToy">
+              <li className="font-bold ">Add A Toy</li>
+            </Link>
+            <Link to="/myToys">
+              <li className="font-bold ">My Toys</li>
+            </Link>
             <Link to="/blog">
               <li className="font-bold">Blog</li>
             </Link>
@@ -50,28 +59,44 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex text-gray-700">
-        <ul className="menu menu-horizontal p-0">
+        <ul className="menu menu-horizontal p-0 gap-4">
           <Link to="/">
-            <li className="font-bold mx-4 ">Home</li>
+            <li className="font-bold">Home</li>
+          </Link>
+          <Link to="/allToys">
+            <li className="font-bold ">All Toys</li>
+          </Link>
+          <Link to="/addAToy">
+            <li className="font-bold ">Add A Toy</li>
+          </Link>
+          <Link to="/myToys">
+            <li className="font-bold ">My Toys</li>
           </Link>
           <Link to="/blog">
-            <li className="font-bold mx-4">Blog</li>
+            <li className="font-bold">Blog</li>
           </Link>
         </ul>
       </div>
       <div className="navbar-end">
         {user?.uid ? (
           <div className="flex gap-4 items-center flex-wrap justify-end">
-            <div className="tooltip tooltip-bottom font-bold" data-tip={user?.displayName}>
-            <img className='h-10 w-10 rounded-3xl' src={user?.photoURL} alt="" />
+            <div
+              className="tooltip tooltip-bottom font-bold"
+              data-tip={user?.displayName}
+            >
+              <img
+                className="h-10 w-10 rounded-3xl"
+                src={user?.photoURL}
+                alt=""
+              />
             </div>
             <button
-            onClick={handleLogOut}
-            to="/login"
-            className="btn btn-primary text-accent"
-          >
-            LogOut
-          </button>
+              onClick={handleLogOut}
+              to="/login"
+              className="btn btn-primary text-accent"
+            >
+              LogOut
+            </button>
           </div>
         ) : (
           <Link to="/login" className="btn btn-primary text-accent">
@@ -80,7 +105,7 @@ const Navbar = () => {
         )}
       </div>
     </div>
-    );
+  );
 };
 
 export default Navbar;
