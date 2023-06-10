@@ -42,7 +42,7 @@ const router = createBrowserRouter([
       {
         path:'allToys',
         element: <AllToys></AllToys>,
-        loader: ()=> fetch('https://toy-world-server-kawsar-ahmed-ridoy.vercel.app/addAToy')
+        loader: ()=> fetch('https://toy-world-server-kawsar-ahmed-ridoy.vercel.app//addAToy')
       },
       {
         path: 'toy/:id',
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
       {
         path: '/update/:id',
         element: <Update></Update>,
-        loader: ({params}) => fetch(`https://toy-world-server-kawsar-ahmed-ridoy.vercel.app/myToys/${params.id}`)
+        loader: ({params}) => fetch(`https://toy-world-server-kawsar-ahmed-ridoy.vercel.app//myToys/${params.id}`)
       }
     ]
   }

@@ -53,50 +53,54 @@ const AllToys = () => {
           </button>
         </form>
       </div>
-      <table className="table w-full">
-        <tbody>
-          {loadeData?.map((data) => (
-            <tr key={data._id}>
-              <td>
-                <div className="flex items-center justify-around space-x-3">
-                  <div className="flex gap-2 items-center">
-                    <div className="avatar">
-                      <div className="rounded w-24 h-24">
-                        {data?.photo && (
-                          <img
-                            src={data.photo}
-                            alt="Avatar Tailwind CSS Component"
-                          />
-                        )}
-                      </div>
-                    </div>
-                    <div>
-                      <div className="font-bold">{data.displayName}</div>
+    {
+      loadeData.length?       <table className="table w-full">
+      <tbody>
+        {loadeData?.map((data) => (
+          <tr key={data._id}>
+            <td>
+              <div className="flex items-center justify-around space-x-3">
+                <div className="flex gap-2 items-center">
+                  <div className="avatar">
+                    <div className="rounded w-24 h-24">
+                      {data?.photo && (
+                        <img
+                          src={data.photo}
+                          alt="Avatar Tailwind CSS Component"
+                        />
+                      )}
                     </div>
                   </div>
-                  <div className="font-bold">
-                    <p>Product Name: {data.productName}</p>
-                    <p>Category: {data.gander}</p>
+                  <div>
+                    <div className="font-bold">{data.displayName}</div>
                   </div>
                 </div>
-              </td>
-              <td>
-                <span className="font-bold">Quantity: {data.quantity}</span>
-                <br />
-                <span className="badge badge-ghost badge-sm font-bold">
-                  Price: ${data.price}
-                </span>
-                <br />
-              </td>
-              <th>
-                <Link to={`/toy/${data._id}`}>
-                  <button onClick={handleClick} className="btn btn-primary">View Details</button>
-                </Link>
-              </th>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+                <div className="font-bold">
+                  <p>Product Name: {data.productName}</p>
+                  <p>Category: {data.gander}</p>
+                </div>
+              </div>
+            </td>
+            <td>
+              <span className="font-bold">Quantity: {data.quantity}</span>
+              <br />
+              <span className="badge badge-ghost badge-sm font-bold">
+                Price: ${data.price}
+              </span>
+              <br />
+            </td>
+            <th>
+              <Link to={`/toy/${data._id}`}>
+                <button onClick={handleClick} className="btn btn-primary">View Details</button>
+              </Link>
+            </th>
+          </tr>
+        ))}
+      </tbody>
+    </table> : <div className="font-bold text-center text-4xl  mb-8">
+          You Have No Toys!
+        </div>
+    }
     </div>
   );
 };

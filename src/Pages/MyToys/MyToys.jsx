@@ -11,7 +11,7 @@ const MyToys = () => {
   const [loadeData, setLoadeData] = useState([]);
 
   useEffect(() => {
-    fetch(`https://toy-world-server-kawsar-ahmed-ridoy.vercel.app/myToys?email=${user.email}`)
+    fetch(`https://toy-world-server-kawsar-ahmed-ridoy.vercel.app//myToys?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setLoadeData(data));
   }, []);
@@ -27,7 +27,7 @@ const MyToys = () => {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://toy-world-server-kawsar-ahmed-ridoy.vercel.app/myToys/${_id}`, {
+        fetch(`https://toy-world-server-kawsar-ahmed-ridoy.vercel.app//myToys/${_id}`, {
           method: "DELETE"
         })
           .then((res) => res.json())
@@ -48,6 +48,16 @@ const MyToys = () => {
 
   };
 
+  const handleBtn1 = () => {
+    const sortData = [...loadeData].sort((a,b) => a.price - b.price)
+    setLoadeData(sortData)
+  };
+
+  const handleBtn2 = () => {
+    const sortData = [...loadeData].sort((a,b) => b.price - a.price)
+    setLoadeData(sortData)
+  };
+
   return (
     <div className="container mx-auto mb-4">
       <div className="my-8">
@@ -56,6 +66,18 @@ const MyToys = () => {
         </h2>
         <p className="text-center  text-gray-500">__________________</p>
       </div>
+      <ul className="p-2 bg-base-100">
+              <button className="btn btn-warning" onClick={handleBtn1}>
+                <li>
+                  <a>Price min</a>
+                </li>
+              </button>
+              <button className="btn btn-warning" onClick={handleBtn2}>
+                <li>
+                  <a>Price max</a>
+                </li>
+              </button>
+            </ul>
       {loadeData.length ? (
         <table className="table w-full">
           <tbody>
