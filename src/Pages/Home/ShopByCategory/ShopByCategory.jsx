@@ -15,7 +15,7 @@ const ShopByCategory = () => {
   const [shopCategory, setShopCategory] = useState([]);
 
   useEffect(() => {
-    fetch("https://toy-world-server-kawsar-ahmed-ridoy.vercel.app//category")
+    fetch("https://toy-world-server-kawsar-ahmed-ridoy.vercel.app/category")
       .then((res) => res.json())
       .then((data) => setShopCategory(data));
   }, []);

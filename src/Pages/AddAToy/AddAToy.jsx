@@ -30,7 +30,7 @@ const AddAToy = () => {
       description
     };
 
-    fetch("https://toy-world-server-kawsar-ahmed-ridoy.vercel.app//addAToy", {
+    fetch("https://toy-world-server-kawsar-ahmed-ridoy.vercel.app/addAToy", {
       method: "POST",
       headers: {
         "content-type": "application/json"

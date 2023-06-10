@@ -11,7 +11,7 @@ const MyToys = () => {
   const [loadeData, setLoadeData] = useState([]);
 
   useEffect(() => {
-    fetch(`https://toy-world-server-kawsar-ahmed-ridoy.vercel.app//myToys?email=${user.email}`)
+    fetch(`https://toy-world-server-kawsar-ahmed-ridoy.vercel.app/myToys?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setLoadeData(data));
   }, []);
@@ -27,7 +27,7 @@ const MyToys = () => {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://toy-world-server-kawsar-ahmed-ridoy.vercel.app//myToys/${_id}`, {
+        fetch(`https://toy-world-server-kawsar-ahmed-ridoy.vercel.app/myToys/${_id}`, {
           method: "DELETE"
         })
           .then((res) => res.json())

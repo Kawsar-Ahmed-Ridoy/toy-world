@@ -58,7 +58,7 @@ const Navbar = () => {
           to="/"
           className="text-primary font-extrabold text-3xl font-mono flex justify-center items-center gap-2 flex-wrap"
         >
-          <img src='https://i.ibb.co/VQzYXCz/Toy-World-Logo-01-scaled.jpg' className="h-8" alt="" />
+          <img src='https://i.ibb.co/VQzYXCz/Toy-World-Logo-01-scaled.jpg' className="h-8 hidden lg:block" alt="" />
           Toy World
         </Link>
       </div>

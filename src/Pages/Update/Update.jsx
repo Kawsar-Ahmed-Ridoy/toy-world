@@ -13,7 +13,7 @@ const Update = () => {
         const description = form.description.value;
         const updateToys = {price, quantity, description}
 
-        fetch(`https://toy-world-server-kawsar-ahmed-ridoy.vercel.app//myToys/${loadData?._id}`, {
+        fetch(`https://toy-world-server-kawsar-ahmed-ridoy.vercel.app/myToys/${loadData?._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
