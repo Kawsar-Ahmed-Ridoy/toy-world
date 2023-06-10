@@ -15,8 +15,8 @@ live website link: https://toy-world-4eac2.web.app/
 * This is best Toy Market
 * This site home page added image slider.
 * Home page scroll down, as you can see gallery, category, About, Subscription, and Footer.
-* My orders, Reported items, Dashboard are private.
-* Seller category wise product added added.
+* Product details, Add a toy, My toys are private.
+* Seller category wise product added.
 
 ## Authors
 
