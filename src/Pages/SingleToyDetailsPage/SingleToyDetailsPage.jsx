@@ -6,7 +6,7 @@ const SingleToyDetailsPage = () => {
     const [singleToy, setSingleToy] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/categoryDetails')
+        fetch('https://toy-world-server-kawsar-ahmed-ridoy.vercel.app/categoryDetails')
           .then((res) => res.json())
           .then((data) => {
             const singleData = data.find((d) => d.id == paramId.id);
@@ -14,7 +14,6 @@ const SingleToyDetailsPage = () => {
           });
       }, []);
       const { img, name, price, quantity, rating, description, category} = singleToy;
-      console.log(singleToy);
       return (
         <div>
           <div className="my-8">

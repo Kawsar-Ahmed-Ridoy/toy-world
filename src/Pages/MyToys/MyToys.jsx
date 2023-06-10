@@ -3,13 +3,15 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import Swal from 'sweetalert2'
+import useTitle from "../../hooks/useTitle";
 
 const MyToys = () => {
+  useTitle('My Toys')
   const { user } = useContext(AuthContext);
   const [loadeData, setLoadeData] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myToys?email=${user.email}`)
+    fetch(`https://toy-world-server-kawsar-ahmed-ridoy.vercel.app/myToys?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setLoadeData(data));
   }, []);
@@ -25,12 +27,11 @@ const MyToys = () => {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/myToys/${_id}`, {
+        fetch(`https://toy-world-server-kawsar-ahmed-ridoy.vercel.app/myToys/${_id}`, {
           method: "DELETE"
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             if (data.deletedCount > 0) {
               toast.success("Deleted Successfully");
               const remaining = loadeData.filter((data) => data._id !== _id);

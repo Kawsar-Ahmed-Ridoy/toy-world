@@ -12,7 +12,6 @@ const GoogleLogin = () => {
     googleLogIn()
     .then(result =>{
       const user = result.user;
-      console.log(user);
       setLoading(false);
       navigate(from, {replace: true})
     })

@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-hot-toast";
+import useTitle from "../../hooks/useTitle";
 
 const AddAToy = () => {
   const { user } = useContext(AuthContext);
-
+  useTitle('Add A Toy')
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -29,7 +30,7 @@ const AddAToy = () => {
       description
     };
 
-    fetch("http://localhost:5000/addAToy", {
+    fetch("https://toy-world-server-kawsar-ahmed-ridoy.vercel.app/addAToy", {
       method: "POST",
       headers: {
         "content-type": "application/json"
@@ -38,7 +39,6 @@ const AddAToy = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.insertedId) {
          toast.success("Toy Add Successfully");
          form.reset()

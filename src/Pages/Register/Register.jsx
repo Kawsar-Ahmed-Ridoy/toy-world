@@ -2,8 +2,10 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import GoogleLogin from '../SocialLogin/GoogleLogin';
 import { AuthContext } from '../../Provider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const Register = () => {
+  useTitle('Register')
   const [error, setError] = useState("");
   const { createUser, updateUser } = useContext(AuthContext);
   const location = useLocation();
@@ -19,12 +21,10 @@ const Register = () => {
     const password = form.password.value;
     const photo = form.photo.value;
     setError("");
-    console.log(name, email, password, photo);
 
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
         const userInfo = {
           displayName: name, photoURL: photo
         };

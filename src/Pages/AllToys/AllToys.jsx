@@ -2,8 +2,10 @@ import React, { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-hot-toast";
+import useTitle from "../../hooks/useTitle";
 
 const AllToys = () => {
+  useTitle('All Toys')
     const {user} = useContext(AuthContext)
   const loadeData = useLoaderData();
 
@@ -16,7 +18,6 @@ const AllToys = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const search = e.target.search.value;
-    console.log(search);
   };
   return (
     <div className="container mx-auto">

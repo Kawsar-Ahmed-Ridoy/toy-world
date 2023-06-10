@@ -4,7 +4,6 @@ import { useLoaderData } from "react-router-dom";
 
 const Update = () => {
   const loadData = useLoaderData();
-  console.log(loadData);
 
     const handleUpdate = (e)=>{
         e.preventDefault()
@@ -14,7 +13,7 @@ const Update = () => {
         const description = form.description.value;
         const updateToys = {price, quantity, description}
 
-        fetch(`http://localhost:5000/myToys/${loadData?._id}`, {
+        fetch(`https://toy-world-server-kawsar-ahmed-ridoy.vercel.app/myToys/${loadData?._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -23,7 +22,6 @@ const Update = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             if(data.modifiedCount>0){
                 toast.success('Updated Successfully')
             }

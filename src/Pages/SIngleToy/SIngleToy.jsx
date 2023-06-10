@@ -6,7 +6,7 @@ const SIngleToy = () => {
   const [singleToy, setSingleToy] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/addAToy")
+    fetch("https://toy-world-server-kawsar-ahmed-ridoy.vercel.app/addAToy")
       .then((res) => res.json())
       .then((data) => {
         const singleData = data.find((d) => d._id == paramId.id);

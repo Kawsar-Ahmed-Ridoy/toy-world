@@ -2,8 +2,10 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import GoogleLogin from '../SocialLogin/GoogleLogin';
 import { AuthContext } from '../../Provider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
+  useTitle("Login")
   const [error, setError] = useState('')
   const {login} = useContext(AuthContext);
   const location = useLocation();
@@ -23,7 +25,6 @@ const Login = () => {
     login(email, password)
     .then(result =>{
       const user = result.user;
-      console.log(user);
       navigate(from, { replace: true });
       form.reset()
     })
